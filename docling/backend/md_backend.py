@@ -367,7 +367,7 @@ class MarkdownDocumentBackend(DeclarativeDocumentBackend):
 
     @classmethod
     def supported_formats(cls) -> Set[InputFormat]:
-        return {InputFormat.MD}
+        return {InputFormat.MD}   # 重要：仅支持md格式的输入
 
     def convert(self) -> DoclingDocument:
         _log.debug("converting Markdown...")

@@ -71,7 +71,8 @@ class ApiVlmOptions(BaseVlmOptions):
     kind: Literal["api_model_options"] = "api_model_options"
 
     url: AnyUrl = AnyUrl(
-        "http://localhost:11434/v1/chat/completions"
+        # "http://localhost:11434/v1/chat/completions"
+        "https://api.blendapi.com/v1/chat/completions"
     )  # Default to ollama
     headers: Dict[str, str] = {}
     params: Dict[str, Any] = {}

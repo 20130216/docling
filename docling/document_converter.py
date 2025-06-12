@@ -206,6 +206,14 @@ class DocumentConverter:
                 f"No pipeline could be initialized for format {format}"
             )
 
+
+
+# convert 是高层接口，封装 convert_all 处理单文档。
+# convert_all 是批量接口，调用 _convert 处理文档集合。
+# _convert 是底层实现，负责分批处理和调用 _process_document。
+# convert -> convert_all -> _convert -> _process_document -> _execute_pipeline
+
+
     @validate_call(config=ConfigDict(strict=True))
     def convert(
         self,
